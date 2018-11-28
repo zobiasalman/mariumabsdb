@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <?php  
- $connect = mysqli_connect('localhost', 'root', 'marium95', 'mysql');  
+ $connect = mysqli_connect('localhost', 'root', 'Abcd#1234', 'mysql');  
  $CID = '';
  if (isset($_POST['save'])) {
 	 $CID = $_POST['CID'];
