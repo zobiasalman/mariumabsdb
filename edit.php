@@ -1,5 +1,5 @@
 <?php
- $connect = mysqli_connect("localhost", "root", "", "mysql"); 
+ $connect = mysqli_connect("localhost", "root", "Abcd#1234", "mysql"); 
 $id=isset($_POST["id"])?$_POST["id"]:"";
 $text=isset($_POST["text"])?$_POST["text"]:"";
 $column_name=isset($_POST["column_name"])?$_POST["column_name"]:"";
