@@ -1,5 +1,5 @@
 <?php  
- $connect = mysqli_connect("localhost", "root", "", "mysql");  
+ $connect = mysqli_connect("localhost", "root", "Abcd#1234", "mysql");  
  $output = '';  
 $CID=isset($_POST["CID"])?$_POST["CID"]:"";
  $sql = "SELECT * FROM SALESORDER13165 WHERE CID='$CID' ORDER BY ORDERNO";  
