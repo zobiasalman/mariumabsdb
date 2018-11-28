@@ -8,7 +8,7 @@ $PASSWORD = "";
 $ACTIVE = "";
 $SALESID = "";
 $edit_state = false;
-$db= mysqli_connect('localhost', 'root', 'marium95', 'mysql');
+$db= mysqli_connect('localhost', 'root', 'Abcd#1234', 'mysql');
 
 if(isset ($_POST['save'])){
 $USERID = $_POST['USERID'];
