@@ -1,5 +1,5 @@
 <?php  
- $connect = mysqli_connect("localhost", "root", "", "mysql"); 
+ $connect = mysqli_connect("localhost", "root", "Abcd#1234", "mysql"); 
 $ORDERNO=isset($_POST["ORDERNO"])?$_POST["ORDERNO"]:"";
 $CID=isset($_POST["CID"])?$_POST["CID"]:"";
 $DATE=isset($_POST["DATE"])?$_POST["DATE"]:"";
