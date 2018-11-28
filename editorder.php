@@ -1,5 +1,5 @@
 <?php  
- $connect = mysqli_connect("localhost", "root", "marium95", "mysql");  
+ $connect = mysqli_connect("localhost", "root", "Abcd#1234", "mysql");  
  $id="";
  /*if (isset($_POST["UPDATE"]))*/
  $id = mysqli_real_escape_string($connect,$_POST["$id"]);
