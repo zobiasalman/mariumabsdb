@@ -1,5 +1,5 @@
 <?php  
- $connect = mysqli_connect("localhost", "root", "marium95", "mysql"); 
+ $connect = mysqli_connect("localhost", "root", "Abcd#1234", "mysql"); 
  if (isset($_POST["del"]))
 	 $id = $_POST['$id'];
  
