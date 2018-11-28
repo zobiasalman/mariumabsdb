@@ -8,7 +8,7 @@
  $QUANTITY='';
  $RATE='';
  $AMOUNT='';
- $connect = mysqli_connect("localhost", "root", "marium95", "mysql");  
+ $connect = mysqli_connect("localhost", "root", "Abcd#1234", "mysql");  
  $res = mysqli_query($connect, "SELECT PRICE FROM PRODUCTS13165 WHERE CODE='$CODE'");
  $row = mysqli_fetch_array($res);
  $sql= "INSER INTO SALESORDER13165(ORDERNO,CID,DATE,ID,CODE,QUANTITY,RATE,AMOUNT) VALUES ('$ORDERNO','$CID','$DATE','$ID','$CODE','$QUANTITY','$RATE','$AMOUNT')";
