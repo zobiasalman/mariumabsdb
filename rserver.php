@@ -8,7 +8,7 @@ $ACTIVE="";
 $SALESID="";
 $errors= array();
 
-$db = mysqli_connect('localhost','root','','mysql');
+$db = mysqli_connect('localhost','root','Abcd#1234','mysql');
 
 if(isset($_POST['register'])) {
 	$USERID = ($_POST['USERID']);
