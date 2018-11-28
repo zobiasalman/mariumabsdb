@@ -17,7 +17,7 @@
 	$host = "localhost";
 	$db_name = "mysql";
 	$username = "root";
-	$password = "marium95";
+	$password = "Abcd#1234";
 	$con = new PDO("mysql:host={$host};dbname={$db_name}", $username, $password);
 	$stmt = $con->prepare("select CID from customers");
 	$stmt->execute();
@@ -44,7 +44,7 @@
       function fetch_data()  
       {  
            $.ajax({  
-                url:"retrieve.php",  
+                url:"retrieveorder.php",  
                 method:"POST",  
 		data:{CID:CID},  
                 dataType:"text",
@@ -81,7 +81,7 @@
                 return false;  
            }  
            $.ajax({  
-                url:"create.php",  
+                url:"createorder.php",  
                 method:"POST",  
                 data:{ORDERNO:ORDERNO, CID:CID DATE:DATE, ID:ID, PRODUCT:PRODUCT, QUANTITY:QUANTITY, RATE:RATE, AMOUNT:AMOUNT},  
                 dataType:"text",  
@@ -95,7 +95,7 @@
       function edit_data(id, text, column_name)  
       {  
            $.ajax({  
-                url:"edit.php",  
+                url:"editorder.php",  
                 method:"POST",  
                 data:{id:id, text:text, column_name:column_name},  
                 dataType:"text",  
@@ -140,7 +140,7 @@
            if(confirm("Are you sure you want to delete this?"))  
            {  
                 $.ajax({  
-                     url:"delete.php",  
+                     url:"deleteorder.php",  
                      method:"POST",  
                      data:{id:id},  
                      dataType:"text",  
