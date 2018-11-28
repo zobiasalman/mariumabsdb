@@ -86,7 +86,7 @@ form {
 <form action="users.php">
 <input type="submit" value= "Users" />
 </form>
-<form action="table.php">
+<form action="tableorder.php">
 <input type="submit" value= "Sales Order" />
 </form>
 <form action="register.php">
