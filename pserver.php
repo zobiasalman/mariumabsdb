@@ -8,7 +8,7 @@ $SHADE = "";
 $SIZE = "";
 $PRICE = "";
 $edit_state = false;
-$db= mysqli_connect('localhost', 'root', '', 'mysql');
+$db= mysqli_connect('localhost', 'root', 'Abcd#1234', 'mysql');
 
 if(isset ($_POST['save'])){
 $CODE = $_POST['CODE'];
