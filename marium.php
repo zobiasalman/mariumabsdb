@@ -20,7 +20,7 @@ $address =  $_POST['Address'];
 $area =  $_POST['Area'];
 $gc =  $_POST['GC'];
 
-$query = "INSERT INTO customers(CID, SName, CName, CNO, Address, Area, GC) VALUES('$cid', '$sname', '$cname', '$cno', '$address', '$area', '$gc')";
+$query = "INSERT INTO customers(CID, SName, CName, CNO, Address, Area, GC) VALUES(".$GET['cid'].",".$GET['sname'].",".$GET['cname'].",".$GET['cno'].",".$GET['address'].",".$GET['area'].",'".$GET['gc']."')";
 mysqli_query($db, $query);
 header('location: database.php');
 }
