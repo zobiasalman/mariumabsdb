@@ -61,7 +61,7 @@
 $host = "localhost";
 $db_name = "mysql";
 $username = "root";
-$password = "";
+$password = "Abcd#1234";
 $con = new PDO("mysql:host={$host};dbname={$db_name}", $username, $password);
 	$stmt = $con->prepare("select CID from customers");
 	$stmt->execute();
