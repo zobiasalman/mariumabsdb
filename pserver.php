@@ -18,7 +18,7 @@ $SHADE =  $_POST['SHADE'];
 $SIZE =  $_POST['SIZE'];
 $PRICE =  $_POST['PRICE'];
 
-$query = "INSERT INTO PRODUCTS13165(CODE, BRAND, TYPE, SHADE, SIZE, PRICE) VALUES('$CODE', '$BRAND', '$TYPE', '$SHADE', '$SIZE', '$PRICE')";
+$query = "INSERT INTO products13165(CODE, BRAND, TYPE, SHADE, SIZE, PRICE) VALUES('$CODE', '$BRAND', '$TYPE', '$SHADE', '$SIZE', '$PRICE')";
 mysqli_query($db, $query);
 header('location: products.php');
 }
@@ -31,16 +31,16 @@ if (isset($_POST['update'])) {
 	$SIZE = mysqli_real_escape_string($db,$_POST['SIZE']);
 	$PRICE = mysqli_real_escape_string($db,$_POST['PRICE']);
 
-	mysqli_query($db, "UPDATE PRODUCTS13165 SET CODE = '$CODE', BRAND= '$BRAND', TYPE = '$TYPE', SHADE = '$SHADE', SIZE = '$SIZE', PRICE = '$PRICE' WHERE CODE = '$CODE'");
+	mysqli_query($db, "UPDATE products13165 SET CODE = '$CODE', BRAND= '$BRAND', TYPE = '$TYPE', SHADE = '$SHADE', SIZE = '$SIZE', PRICE = '$PRICE' WHERE CODE = '$CODE'");
 	$_SESSION ['msg']= "The address is updated";
 	header('location: products.php');
 }
 
 if (isset($_GET["del"])) {
 	$CODE = $_GET["del"];
-	mysqli_query($db, "DELETE FROM PRODUCTS13165 WHERE CODE= '$CODE'");
+	mysqli_query($db, "DELETE FROM products13165 WHERE CODE= '$CODE'");
 	$_SESSION ['msg']= "The address is deleted";
 	header('location: products.php');
 }
-$results = mysqli_query($db, "SELECT * FROM PRODUCTS13165");
+$results = mysqli_query($db, "SELECT * FROM products13165");
 ?>
