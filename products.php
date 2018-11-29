@@ -3,7 +3,7 @@
 	if (isset($_GET['edit'])) {
 		$CODE = $_GET['edit'];
 		$edit_state = true;
-		$rec = mysqli_query($db, "SELECT * FROM PRODUCTS13165 WHERE CODE= '$CODE'");
+		$rec = mysqli_query($db, "SELECT * FROM products13165 WHERE CODE= '$CODE'");
 		$record = mysqli_fetch_assoc($rec);
 		$CODE = $record['CODE'];
 		$BRAND = $record['BRAND'];
