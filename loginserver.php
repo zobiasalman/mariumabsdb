@@ -27,7 +27,7 @@ if (isset($_POST['login'])) {
 		$PASSWORD = md5($PASSWORD);
 		$query = "SELECT * FROM USER13165 WHERE USERID = '$USERID', USERNAME = '$USERNAME', PASSWORD = '$PASSWORD'";
 		$result = mysqli_query($db, $query);
-		if(mysqli_num_rows($result)==1) {
+		if(mysqli_num_rows($result)==0) {
 			$_SESSION['USERID'] = $USERID;
 			
 			$_SESSION['success'] = "LOGGED IN";
