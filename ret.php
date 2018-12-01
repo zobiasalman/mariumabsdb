@@ -2,6 +2,7 @@
  $connect = mysqli_connect("localhost", "root", "Abcd#1234", "mysql");  
  $output = '';  
 $CID=isset($_POST["CID"])?$_POST["CID"]:"";
+
  $sql = "SELECT * FROM SALESORDER13165 WHERE CID='$CID' ORDER BY ORDERNO";  
  $sql1 = "SELECT * FROM customers WHERE CID='$CID'";
  $sql2 = "SELECT ID FROM SALESPERSON13165";
@@ -10,6 +11,7 @@ $CID=isset($_POST["CID"])?$_POST["CID"]:"";
  $result1 = mysqli_query($connect, $sql1);
  $result2 = mysqli_query($connect, $sql2);
  $row = mysqli_fetch_array($result1);
+ 
  $output .= '  
 <table border="1" align="center" table width="1200">
 <tr style="background-color:DodgerBlue; padding: 20px;"> <th>ID</th> <th>ShopName</th> <th>CustomerName</th> <th>ContactNo</th> <th>Address</th> <th>Area</th> <th>GeographicalCoordinates</th></tr>
@@ -37,8 +39,10 @@ $CID=isset($_POST["CID"])?$_POST["CID"]:"";
                      <th width="40%" style="padding: 20px;">Rate</th>
                      <th width="40%" style="padding: 20px;">Amount</th> 
                      <th width="10%" style="padding: 20px;">Action</th>  
-                </tr>';  
+ 
+ </tr>';  
  if(mysqli_num_rows($result) > 0)  
+ 
  {  
       while($row = mysqli_fetch_array($result))  
       {  
@@ -99,8 +103,8 @@ $output .= '<option value="'.$row2["CODE"].'"'.($row["CODE"]==$row2["CODE"]?'sel
     		$output .= '</select>
 		</td>  
                 <td id="QUANTITY" contenteditable></td>  
-                <td> - </td>  
-                <td> - </td>  
+                <td id="RATE" contenteditable></td>  
+                <td id="AMOUNT" contenteditable></td> 
                 <td><button type="button" name="btn_add" id="btn_add" class="btn btn-xs btn-success">Create</button></td>  
            </tr>  
       ';  
@@ -131,8 +135,8 @@ $output .= '
     		$output .= '</select>
 		</td>  
                 <td id="QUANTITY" contenteditable></td>  
-                <td> - </td>  
-                <td> - </td>  
+                <td id = "RATE" contenteditable </td>  
+                <td id = "AMOUNT" contenteditable </td>  
                 <td><button type="button" name="btn_add" id="btn_add" class="btn btn-xs btn-success">Create</button></td>  
            </tr>		
 <tr>  
@@ -141,5 +145,6 @@ $output .= '
  }  
  $output .= '</table>  
       </div>';  
+
  echo $output;  
  ?>
