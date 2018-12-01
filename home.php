@@ -89,6 +89,12 @@ form {
 <form action="table.php">
 <input type="submit" value= "Sales Order" />
 </form>
+<form action="survery.php">
+<input type="submit" value= "Survery Form" />
+</form>
+<form action="dashboardbar.php">
+<input type="submit" value= "DashBoard" />
+</form>
 <form action="register.php">
 <input type="submit" value= "If not a user, Register" />
 </form>
