@@ -1,5 +1,5 @@
 <?php
- $con = mysqli_connect('localhost','root','','mysql');
+ $con = mysqli_connect('localhost','root','Abcd#1234','mysql');
 ?>
 
 <!DOCTYPE HTML>
