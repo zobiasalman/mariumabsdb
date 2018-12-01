@@ -1,11 +1,12 @@
 <html>
 <head>  
            <title>Sales Order</title>  
+		   <link rel= "stylesheet" type="text/css" href="style.css">
            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
       </head>   
-<body style="background-color:lavender">
+<body style="background-color:lavenderblush">
        
 <style>
 
@@ -47,8 +48,7 @@
   <a href='users.php'><b>User</b></a>
   <a href='products.php'><b>Product</b></a>
   <a class="active" href='table.php'><b>SalesOrder</b></a>
-
-  <a  href='logout.php'><b>LOGOUT</b></a>
+<a  href='login13165.php'><b>LOGOUT</b></a>
 
 
 </div>
@@ -61,7 +61,7 @@
 $host = "localhost";
 $db_name = "mysql";
 $username = "root";
-$password = "Abcd#1234";
+$password = "";
 $con = new PDO("mysql:host={$host};dbname={$db_name}", $username, $password);
 	$stmt = $con->prepare("select CID from customers");
 	$stmt->execute();
@@ -81,9 +81,9 @@ $con = new PDO("mysql:host={$host};dbname={$db_name}", $username, $password);
  <script>  
  	$(document).ready(function(){  
 	var CID= $('#CID').val();
-	window.alert("aaaa");
+	//window.alert("aaaa");
 	$('#CID').change(function(){
-		alert("aaaa");
+	//	alert("aaaa");
 	CID = $('#CID').val();	
       	 fetch_data();
 	});
@@ -91,7 +91,7 @@ $con = new PDO("mysql:host={$host};dbname={$db_name}", $username, $password);
 	function fetch_data()
       {  
 	  var CID= $('#CID').val();
-	  alert("aa");
+	  //alert("aa");
            $.ajax({  
                 url:"ret.php",  
                 method:"POST",  
@@ -104,6 +104,7 @@ $con = new PDO("mysql:host={$host};dbname={$db_name}", $username, $password);
       }  
       fetch_data();  
       $(document).on('click', '#btn_add', function(){  
+	  window.alert('hello');
 	   var ORDERNO = $('#ORDERNO').text(); 
            var CID = CID;  
            var DATE = $('#DATE').text();  
@@ -119,7 +120,7 @@ $con = new PDO("mysql:host={$host};dbname={$db_name}", $username, $password);
                 alert("Enter OrderNo");  
                 return false;  
            }   
-	   if(DATE == '')  
+			if(DATE == '')  
            {  
                 alert("Enter date");  
                 return false;  
@@ -129,17 +130,24 @@ $con = new PDO("mysql:host={$host};dbname={$db_name}", $username, $password);
                 alert("Enter Quanity");  
                 return false;  
            }    
-                $.ajax({  
+			else {
+				//alert('ajax tak paucha');
+				$.ajax({
+				
                 url:"create.php",  
                 method:"POST",  
                 data:{ORDERNO:ORDERNO, CID:CID,DATE:DATE,ID:ID, CODE:CODE, QUANTITY:QUANTITY, RATE:RATE,AMOUNT:AMOUNT},  
                 dataType:"text",  
                 success:function(data)  
                 {  
-                    // alert(data);  
+                     //alert("success");  
                      fetch_data();  
                 }  
-           })  
+           });
+			}
+			
+            
+			
       });  
       function edit_data(id, text, column_name)  
       {  
